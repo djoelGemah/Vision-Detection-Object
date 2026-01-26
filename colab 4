@@ -1,0 +1,4 @@
+# Untuk mendownload file ".pt" yang akan kita gunakan dalam python object detection.
+
+from google.colab import files
+files.download("runs/detect/train2/weights/best.pt")
