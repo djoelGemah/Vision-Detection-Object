@@ -40,29 +40,29 @@
 16. pilih "YOLO".
 17. Data Zip silakan di instal pada folder atau tempat penyimpanan yang anda inginkan. Biasanya saya namai "raw_dataset".
 18. Hasil Export akan memiliki struktur seperti :
-    raw_dataset/
-    ├── images/
-    │   ├── img1.jpg
-    │   ├── img2.jpg
-    │   ├── img3.jpg
-    │   └── ...
-    ├── labels/
-    │   ├── img1.txt
-    │   ├── img2.txt
-    │   ├── img3.txt
-    │   └── ...
-    ├── classes
-    └── notes.json
+    - raw_dataset/
+      - ├── images/
+        - │   ├── img1.jpg
+        - │   ├── img2.jpg
+        - │   ├── img3.jpg
+        - │   └── ...
+      - ├── labels/
+        - │   ├── img1.txt
+        - │   ├── img2.txt
+        - │   ├── img3.txt
+        - │   └── ...
+      - ├── classes
+      - └── notes.json
 
 ## Split Data Set
 1. Extract raw_dataset untuk di split ke folder baru.
 2. Buat Folder baru untuk menjadi wadah hasil pembagian data untuk train 80% dan val 20%.
 3. Bisa dinamai "dataset" foldernya.
-   └── dataset/
-    ├── images/train
-    ├── images/val
-    ├── labels/train
-    └── labels/val
+   - └── dataset/
+      - ├── images/train
+      - ├── images/val
+      - ├── labels/train
+      - └── labels/val
 5. Buka VS code.
 6. Buka folder yang menyimpan keseluruhan folder file project agar folder raw_dataset dan lainnya juga terhubung.
 7. Buat file python split dataset dengan cara file --> new text file --> set sebagai type python --> isi baris kode bisa diambil pada file github dengan nama split_dataset.py
