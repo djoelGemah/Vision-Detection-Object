@@ -70,14 +70,14 @@
 9. Dalam folder dataset akan terdapat file data.yaml
 10. JIKA data.yaml tidak ada, anda bisa menuliskan manual dengan note dan berikut isinya :
    
-path: dataset
+- path: dataset
 
-train: images/train
-val: images/val
+- train: images/train
+- val: images/val
 
-names:
-  0: ceres
-  1: parfume
+- names:
+-   0: ceres
+-   1: parfume
 
 
 7. Untuk bagian "names :" Bisa diliat dari isi folder raw_dataset di file classes.txt. -- >Urutannya dan nama-namanya memang berasal dari LabelStudio yang kita buat dan nantinya untuk .yaml di folder "dataset" kita tambahkan no urut "0,1,2, dst" seperti di contoh step no 6 yang bisa digunakan sebagai patokan contoh benar.   Lalu Save as dengan file name "data.yaml" jangan lupakan tulis .yaml --> Save as type diganti "All files(*.*)" lalu save.
