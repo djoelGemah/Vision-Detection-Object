@@ -1,1 +1,2 @@
-!unzip dataset2.zip
+# Ini untuk unzip folder dataset. Namanya bisa disesuaikan.
+!unzip dataset.zip
