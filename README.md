@@ -1,5 +1,4 @@
-# WhatIf
-Learn
+# Membuat Pendeteksi Objek memanfaatkan Miniconda3, LabelStudio, GoogleCollab, VisualStudioCode 
 
 ## Pengumpulan Data
 1. Lakukan pengumpulan data foto. Data dikumpulkan secara mandiri dengan saran minimal 100 foto per objek dengan berbagai kondisi sudut pengambilan gambar, berbagai kondisi pencahayaan dan background bebas.
@@ -56,12 +55,53 @@ Learn
     └── notes.json
 
 ## Split Data Set
-1. Buat Folder baru untuk menjadi wadah hasil pembagian data untuk train 80% dan val 20%.
-2. Bisa dinamai "dataset" foldernya.
+1. Extract raw_dataset untuk di split ke folder baru.
+2. Buat Folder baru untuk menjadi wadah hasil pembagian data untuk train 80% dan val 20%.
+3. Bisa dinamai "dataset" foldernya.
    └── dataset/
     ├── images/train
     ├── images/val
     ├── labels/train
     └── labels/val
-3. 
+5. Buka VS code.
+6. Buka folder yang menyimpan keseluruhan folder file project agar folder raw_dataset dan lainnya juga terhubung.
+7. Buat file python split dataset dengan cara file --> new text file --> set sebagai type python --> isi baris kode bisa diambil pada file github dengan nama split_dataset.py
+8. Jalankan kode split_dataset itu dan secara otomatis membagi data 80% sesuai yang dibutuhkan dari raw_dataset ke dataset.
+9. Dalam folder dataset akan terdapat file data.yaml
+10. JIKA data.yaml tidak ada, anda bisa menuliskan manual dengan note dan berikut isinya :
+   
+path: dataset
+
+train: images/train
+val: images/val
+
+names:
+  0: ceres
+  1: parfume
+
+
+7. Untuk bagian "names :" Bisa diliat dari isi folder raw_dataset di file classes.txt. -- >Urutannya dan nama-namanya memang berasal dari LabelStudio yang kita buat dan nantinya untuk .yaml di folder "dataset" kita tambahkan no urut "0,1,2, dst" seperti di contoh step no 6 yang bisa digunakan sebagai patokan contoh benar.   Lalu Save as dengan file name "data.yaml" jangan lupakan tulis .yaml --> Save as type diganti "All files(*.*)" lalu save.
+8. Ambil kode python dengan nama "split_dataset.py" untuk membantu melakukan split data. Run kode itu. Untuk python saya sepenuhnya menggunakan VisualCode Studio dan langsung membuka folder projeknya.
+9. Compress dataset menjadi Zip untuk dimasukkan kedalam gooogle colab nantinya.
+10. Setelah itu dataset siap untuk di train.
+   
 ## Training menggunakan google colab.
+1. Buat Note Baru pada google Colab.
+2. Tekan "runtime".
+3. Tekan "Ubah jenis runtime".
+4. Pada bagian "Akselerator hardware" pilih "GPU T4".
+5. Simpan.
+6. Masukkan folder dataset.zip kedalam file google colab.
+7. jalankan beberapa kode berikut ini bergantian di google colab. Berikut urutan file file kode colabnya:
+   - colab 1
+   - colab 2
+   - colab 3
+   - colab 4
+   - Simpan pada folder yang sama diluar folder dataset atau bisa dibilang folder yang menyimpan keseluruhan projek.
+
+## Menjalankan Objek Deteksi
+1. Buka VS code kembali.
+2. Buka folder yang menyimpan keseluruhan projek di VScode.
+3. Buat File python atau kode python baru dengan cara --> File --> New Text file --> buat tipe python.
+4. Untuk isinya bisa dicopy dari file di github yang bernama "Kode Objek Detektion Simulasi Toko.py"
+5. Untuk bagian Path Konfigurasi di kodenya itu saya menyesuaikan set up saya dan bisa kalian sesuaikan. untuk folder keseluruhan folder file project disitu saya namai deteksi. lalu ada folder tambahan yang saya siapkan untuk menyimpan perhitungan dan foto pembeli serta orangnya di folder "rekap_penjualan" yang saya siapkan di data "D:\deteksi" lokasinya dan penjualan didalam note penjualan.txt.
